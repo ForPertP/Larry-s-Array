@@ -32,8 +32,6 @@ string larrysArray(vector<int> A)
 }
 
 
-
-
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
