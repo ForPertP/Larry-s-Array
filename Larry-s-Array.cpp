@@ -16,6 +16,36 @@ vector<string> split(const string &);
 string larrysArray(vector<int> A)
 {
     int count = 0;
+    int n = A.size();
+    bool swapped;
+    int lastSwap;
+
+    do
+    {
+        swapped = false;
+        lastSwap = 0;
+        
+        for (int i = 0; i < n - 1; ++i)
+        {
+            if (A[i] > A[i + 1])
+            {
+                swap(A[i], A[i + 1]);
+                count++;
+                swapped = true;
+                lastSwap = i;
+            }
+        }
+        
+        n = lastSwap + 1;
+        
+    } while (swapped);
+
+    return (count % 2 == 0) ? "YES" : "NO";
+}
+
+string larrysArray2(vector<int> A)
+{
+    int count = 0;
     
     for (int i = 0; i < A.size()-1; ++i)
     {
@@ -30,7 +60,6 @@ string larrysArray(vector<int> A)
     
     return (count % 2 == 0) ? "YES" : "NO";
 }
-
 
 int main()
 {
@@ -70,7 +99,6 @@ int main()
     return 0;
 }
 
-
 string ltrim(const string &str) {
     string s(str);
 
@@ -109,4 +137,3 @@ vector<string> split(const string &str) {
 
     return tokens;
 }
-
