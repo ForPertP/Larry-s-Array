@@ -13,6 +13,37 @@ vector<string> split(const string &);
  * The function accepts INTEGER_ARRAY A as parameter.
  */
 
+string larrysArray(vector<int> A)
+{
+    int count = 0;
+    int n = A.size();
+    bool swapped;
+    int lastSwap;
+
+    do
+    {
+        swapped = false;
+        lastSwap = 0;
+        
+        for (int i = 0; i < n - 1; ++i)
+        {
+            if (A[i] > A[i + 1])
+            {
+                swap(A[i], A[i + 1]);
+                count++;
+                swapped = true;
+                lastSwap = i;
+            }
+        }
+        
+        n = lastSwap + 1;
+        
+    } while (swapped);
+
+    return (count % 2 == 0) ? "YES" : "NO";
+}
+
+
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
@@ -51,7 +82,6 @@ int main()
     return 0;
 }
 
-
 string ltrim(const string &str) {
     string s(str);
 
@@ -74,3 +104,19 @@ string rtrim(const string &str) {
     return s;
 }
 
+vector<string> split(const string &str) {
+    vector<string> tokens;
+
+    string::size_type start = 0;
+    string::size_type end = 0;
+
+    while ((end = str.find(" ", start)) != string::npos) {
+        tokens.push_back(str.substr(start, end - start));
+
+        start = end + 1;
+    }
+
+    tokens.push_back(str.substr(start));
+
+    return tokens;
+}
