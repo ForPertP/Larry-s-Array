@@ -14,6 +14,13 @@ vector<string> split(const string &);
  */
 
 
+string larrysArray(vector<int> A)
+{
+    int inversionCount = mergeSortAndCount(A, 0, A.size() - 1);
+    return (inversionCount % 2 == 0) ? "YES" : "NO";
+}
+
+
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
