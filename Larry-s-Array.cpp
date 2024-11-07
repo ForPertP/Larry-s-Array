@@ -13,6 +13,27 @@ vector<string> split(const string &);
  * The function accepts INTEGER_ARRAY A as parameter.
  */
 
+int mergeAndCount(vector<int>& arr, int left, int mid, int right)
+{
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    
+   
+    
+}
+
+int mergeSortAndCount(vector<int>& arr, int left, int right)
+{
+    int inversionCount = 0;
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        
+        inversionCount += mergeSortAndCount(arr, left, mid);
+        inversionCount += mergeSortAndCount(arr, mid + 1, right);
+        inversionCount += mergeAndCount(arr, left, mid, right);
+    }
+    return inversionCount;
+}
 
 string larrysArray(vector<int> A)
 {
