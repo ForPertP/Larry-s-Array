@@ -17,7 +17,14 @@ int mergeAndCount(vector<int>& arr, int left, int mid, int right)
 {
     int n1 = mid - left + 1;
     int n2 = right - mid;
+
+    vector<int> leftArr(arr.begin() + left, arr.begin() + mid + 1);
+    vector<int> rightArr(arr.begin() + mid + 1, arr.begin() + right + 1);
     
+    int i = 0, j = 0, k = left;
+    int inversionCount = 0;
+    
+    return inversionCount;
    
     
 }
