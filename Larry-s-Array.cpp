@@ -23,7 +23,44 @@ int mergeAndCount(vector<int>& arr, int left, int mid, int right)
     
     int i = 0, j = 0, k = left;
     int inversionCount = 0;
+
+    while (i < n1 && j < n2)
+    {
+        if (leftArr[i] <= rightArr[j])
+        {
+            arr[k++] = leftArr[i++];
+        }
+        else
+        {
+            arr[k++] = rightArr[j++];
+        }
+    }
+
     
+    while (i < n1 && j < n2)
+    {
+        if (leftArr[i] <= rightArr[j])
+        {
+            arr[k++] = leftArr[i++];
+        }
+        else
+        {
+            arr[k++] = rightArr[j++];
+            inversionCount += (n1 - i);
+        }
+    }
+    
+   while (i < n1 && j < n2) {
+        if (leftArr[i] <= rightArr[j]) {
+            arr[k++] = leftArr[i++];
+        } else {
+            arr[k++] = rightArr[j++];
+            inversionCount += (n1 - i);
+        }
+    }
+    
+        
+        
     return inversionCount;
    
     
