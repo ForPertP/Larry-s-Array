@@ -17,7 +17,7 @@ int mergeAndCount(vector<int>& arr, int left, int mid, int right)
 {
     int n1 = mid - left + 1;
     int n2 = right - mid;
-
+    
     vector<int> leftArr(arr.begin() + left, arr.begin() + mid + 1);
     vector<int> rightArr(arr.begin() + mid + 1, arr.begin() + right + 1);
     
@@ -38,30 +38,31 @@ int mergeAndCount(vector<int>& arr, int left, int mid, int right)
     }
     
     while (i < n1)
-        {
-            arr[k++] = leftArr[i++];
-        }
-
+    {
+        arr[k++] = leftArr[i++];
+    }
+    
     while (j < n2)
-        {
-            arr[k++] = rightArr[j++];
-        }
+    {
+        arr[k++] = rightArr[j++];
+    }
     
     return inversionCount;
-   
-    
 }
 
 int mergeSortAndCount(vector<int>& arr, int left, int right)
 {
     int inversionCount = 0;
-    if (left < right) {
+
+    if (left < right)
+    {
         int mid = left + (right - left) / 2;
         
         inversionCount += mergeSortAndCount(arr, left, mid);
         inversionCount += mergeSortAndCount(arr, mid + 1, right);
         inversionCount += mergeAndCount(arr, left, mid, right);
     }
+    
     return inversionCount;
 }
 
