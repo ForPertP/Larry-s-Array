@@ -14,13 +14,19 @@ using System;
 
 class Result
 {
-
     /*
      * Complete the 'larrysArray' function below.
      *
      * The function is expected to return a STRING.
      * The function accepts INTEGER_ARRAY A as parameter.
      */
+
+    public static string larrysArray(List<int> A)
+    {
+        int inversionCount = mergeSortAndCount(A, 0, A.Count - 1);
+        return (inversionCount % 2 == 0) ? "YES" : "NO";
+    }
+    
 }
 
 
