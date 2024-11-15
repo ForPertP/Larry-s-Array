@@ -21,6 +21,12 @@ class Result
      * The function accepts INTEGER_ARRAY A as parameter.
      */
 
+ private static int mergeSortAndCount(List<int> A, int left, int right)
+    {
+        int inversionCount = 0;
+       
+        return inversionCount;
+    }    
     public static string larrysArray(List<int> A)
     {
         int inversionCount = mergeSortAndCount(A, 0, A.Count - 1);
