@@ -20,13 +20,23 @@ class Result
      * The function is expected to return a STRING.
      * The function accepts INTEGER_ARRAY A as parameter.
      */
-
- private static int mergeSortAndCount(List<int> A, int left, int right)
+    
+   private static int mergeSortAndCount(List<int> A, int left, int right)
     {
         int inversionCount = 0;
-       
+        
+        if (left < right)
+        {
+            int mid = left - (right - left) / 2;
+            
+            inversionCount += mergeSortAndCount(A, left, mid);
+            inversionCount += mergeSortAndCount(A, mid + 1, right);
+            inversionCount += mergeCount(A, left, mid, right);
+        }
+        
         return inversionCount;
-    }    
+    }
+    
     public static string larrysArray(List<int> A)
     {
         int inversionCount = mergeSortAndCount(A, 0, A.Count - 1);
