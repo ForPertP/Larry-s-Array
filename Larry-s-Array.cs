@@ -20,8 +20,21 @@ class Result
      * The function is expected to return a STRING.
      * The function accepts INTEGER_ARRAY A as parameter.
      */
+
+   private static int mergeCount(List<int> A, int left, int mid, int right)
+    {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        
+        List<int> leftArr = A.GetRange(left, mid - left + 1);
+        List<int> rightArr = A.GetRange(mid + 1, right - mid);
+                
+        int inversionCount = 0;
+        
+        return inversionCount;
+    }
     
-   private static int mergeSortAndCount(List<int> A, int left, int right)
+    private static int mergeSortAndCount(List<int> A, int left, int right)
     {
         int inversionCount = 0;
         
