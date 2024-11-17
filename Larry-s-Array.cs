@@ -28,8 +28,10 @@ class Result
         
         List<int> leftArr = A.GetRange(left, mid - left + 1);
         List<int> rightArr = A.GetRange(mid + 1, right - mid);
-                
+
+       
         int inversionCount = 0;
+        int i = 0, j = 0, k = left;
         
         return inversionCount;
     }
