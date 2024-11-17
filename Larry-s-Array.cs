@@ -40,7 +40,7 @@ class Result
         
         if (left < right)
         {
-            int mid = left - (right - left) / 2;
+            int mid = left + (right - left) / 2;
             
             inversionCount += mergeSortAndCount(A, left, mid);
             inversionCount += mergeSortAndCount(A, mid + 1, right);
