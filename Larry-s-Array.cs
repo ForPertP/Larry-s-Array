@@ -32,6 +32,7 @@ class Result
         int inversionCount = 0;
         int i = 0, j = 0, k = left;
        
+
         while (i < n1 && j < n2)
         {
             if (leftArr[i] <= rightArr[j])
@@ -44,6 +45,7 @@ class Result
                 inversionCount += (n1 - i);
             }
         }
+       
        
         return inversionCount;
     }
