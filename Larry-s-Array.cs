@@ -45,7 +45,11 @@ class Result
                 inversionCount += (n1 - i);
             }
         }
-       
+
+        while (i < n1)
+        {
+            A[k++] = leftArr[i++];
+        }
        
         return inversionCount;
     }
