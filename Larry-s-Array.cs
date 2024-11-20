@@ -50,6 +50,13 @@ class Result
         {
             A[k++] = leftArr[i++];
         }
+
+       
+        while (j < n2)
+        {
+            A[k++] = rightArr[j++];
+        }           
+               
        
         return inversionCount;
     }
