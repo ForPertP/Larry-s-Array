@@ -14,6 +14,7 @@ using System;
 
 class Result
 {
+
     /*
      * Complete the 'larrysArray' function below.
      *
@@ -21,18 +22,17 @@ class Result
      * The function accepts INTEGER_ARRAY A as parameter.
      */
 
-   private static int mergeCount(List<int> A, int left, int mid, int right)
+    private static int mergeCount(List<int> A, int left, int mid, int right)
     {
         int n1 = mid - left + 1;
         int n2 = right - mid;
         
         List<int> leftArr = A.GetRange(left, mid - left + 1);
         List<int> rightArr = A.GetRange(mid + 1, right - mid);
-       
+                
         int inversionCount = 0;
         int i = 0, j = 0, k = left;
-       
-
+        
         while (i < n1 && j < n2)
         {
             if (leftArr[i] <= rightArr[j])
@@ -45,19 +45,17 @@ class Result
                 inversionCount += (n1 - i);
             }
         }
-
+        
         while (i < n1)
         {
             A[k++] = leftArr[i++];
         }
-
-       
+        
         while (j < n2)
         {
             A[k++] = rightArr[j++];
-        }           
-               
-       
+        }        
+
         return inversionCount;
     }
     
@@ -82,7 +80,6 @@ class Result
         int inversionCount = mergeSortAndCount(A, 0, A.Count - 1);
         return (inversionCount % 2 == 0) ? "YES" : "NO";
     }
-    
 }
 
 
