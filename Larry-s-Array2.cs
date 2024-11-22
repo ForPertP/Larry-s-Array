@@ -24,7 +24,37 @@ class Result
 
     public static string larrysArray(List<int> A)
     {
+        int count = 0;
+        int n = A.Count;
+        bool swapped;
+        int lastSwap;
+
+        do
+        {
+            swapped = false;
+            lastSwap = 0;
+            
+            for (int i = 0; i < n - 1; ++i)
+            {
+                if (A[i] > A[i + 1])
+                {
+                    int temp = A[i];
+                    A[i] = A[i + 1];
+                    A[i + 1] = temp;
+                    
+                    count++;
+                    swapped = true;
+                    lastSwap = i;
+                }
+            }
+            
+            n = lastSwap + 1;
+            
+        } while (swapped);
+
+        return (count % 2 == 0) ? "YES" : "NO";
     }
+
 }
 
 class Solution
