@@ -14,7 +14,6 @@ using System;
 
 class Result
 {
-
     /*
      * Complete the 'larrysArray' function below.
      *
@@ -54,8 +53,8 @@ class Result
 
         return (count % 2 == 0) ? "YES" : "NO";
     }
-
 }
+
 
 class Solution
 {
