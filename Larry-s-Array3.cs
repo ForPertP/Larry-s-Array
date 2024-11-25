@@ -26,8 +26,34 @@ class Result
     {
         int count = 0;
 
-        
+        for (int i = 0; i < A.Count - 1; ++i)
+        {
+            for (int j = i+1; j < A.count; ++j)
+            {
+                if (A[i] > A[j])
+                {
+                    count++;
+                }
+            }
+        }
+                    
+        return (count % 2) ? "Yes" : "No";
 
+        int count = 0;
+        
+        for (int i = 0; i < A.Count - 1; ++i)
+        {
+            for (int j = i + 1; j < A.Count; ++j)
+            {
+                if (A[i] > A[j])
+                {
+                    count++;
+                }
+            }
+        }
+        
+        return (count % 2 == 0) ? "YES" : "NO";
+        
     }
 }
 
