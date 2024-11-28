@@ -20,10 +20,21 @@ class Result {
      */
 
     public static String larrysArray(List<Integer> A) {
-    // Write your code here
-
+        int count = 0;
+        
+        for (int i = 0; i < A.size() - 1; ++i)
+        {
+            for (int j = i + 1; j < A.size(); ++j)
+            {
+                if (A.get(i) > A.get(j))
+                {
+                    count++;
+                }
+            }
+        }
+        
+        return (count % 2 == 0) ? "YES" : "NO";
     }
-
 }
 
 
