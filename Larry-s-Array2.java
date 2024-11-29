@@ -19,6 +19,37 @@ class Result {
      * The function accepts INTEGER_ARRAY A as parameter.
      */
 
+    public static String larrysArray(List<Integer> A) {
+    // Write your code here
+        int count = 0;
+        int n = A.size();
+        boolean swapped;
+        int lastSwap;
+
+        do {
+            swapped = false;
+            lastSwap = 0;
+
+            for (int i = 0; i < n - 1; ++i) {
+                if (A.get(i) > A.get(i + 1)) {
+                    // Swap elements
+                    int temp = A.get(i);
+                    A.set(i, A.get(i + 1));
+                    A.set(i + 1, temp);
+
+                    count++;
+                    swapped = true;
+                    lastSwap = i;
+                }
+            }
+
+            n = lastSwap + 1;
+
+        } while (swapped);
+
+        return (count % 2 == 0) ? "YES" : "NO";
+    }
+}
 
 
 public class Solution {
