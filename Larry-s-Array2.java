@@ -20,7 +20,6 @@ class Result {
      */
 
     public static String larrysArray(List<Integer> A) {
-    // Write your code here
         int count = 0;
         int n = A.size();
         boolean swapped;
